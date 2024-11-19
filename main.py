@@ -9,19 +9,21 @@ from torch.utils.data import DataLoader, Dataset
 from torchvision import datasets, transforms, models
 import os
 from PIL import Image
-from lenet import LeNet_CIFAR10
 import questionary
 import threading
 import time
 import itertools
 from rich.console import Console
 import io
+from models.lenet import LeNet_CIFAR10
+from models.spatio_temporal import Transformer
 
 console = Console()
 
 # Dictionary of custom models
 custom_models = {
-    "LeNet_CIFAR10": LeNet_CIFAR10,
+    "LeNet_CIFAR10" : LeNet_CIFAR10,
+    "Spatio-Temporal Transformer" : Transformer
 }
 
 def hourglass_animation(message, event):

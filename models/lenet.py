@@ -4,6 +4,10 @@ import torch.nn.functional as F
 from torchvision import models
 
 class LeNet_CIFAR10(nn.Module): 
+
+    def getName(self):
+        return "LeNet_CIFAR10"
+
     def __init__(self, num_classes=10): 
         super(LeNet_CIFAR10, self).__init__() 
         self.conv1 = nn.Conv2d(3, 128, kernel_size=3, padding=1) 
